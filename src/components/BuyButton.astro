@@ -1,17 +1,17 @@
 ---
-const country = Astro.request.headers.get("X-Vercel-IP-Country") ?? "es"
+const country = Astro.request.headers.get("X-Vercel-IP-Country") ?? "ES"
 console.log({ country })
 
 const BOOK_INFO: Record<string, { url: string; title: string }> = {
-  es: {
+  ES: {
     url: "https://midu.link/libro",
     title: "Comprar libro físico en Amazon España",
   },
-  mx: {
+  MX: {
     url: "https://midu.link/libro-mx",
     title: "Comprar libro físico en Amazon México",
   },
-  rest: {
+  REST: {
     url: "https://midu.link/libro-latam",
     title: "Comprar libro físico en Amazon ",
   },
