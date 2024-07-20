@@ -1,6 +1,5 @@
 ---
-const country = Astro.request.headers.get("X-Vercel-IP-Country") ?? "ES"
-console.log({ country })
+const country = Astro.request.headers.get("X-Vercel-IP-Country") ?? "CO"
 
 const BOOK_INFO: Record<string, { url: string; title: string }> = {
   ES: {
@@ -17,7 +16,7 @@ const BOOK_INFO: Record<string, { url: string; title: string }> = {
   },
 } as const
 
-const { url, title } = BOOK_INFO[country] ?? BOOK_INFO.rest
+const { url, title } = BOOK_INFO[country] ?? BOOK_INFO.REST
 ---
 
 <a
