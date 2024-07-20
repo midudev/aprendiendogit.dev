@@ -4,11 +4,11 @@ import Book from "../components/Book.astro"
 import BuyButton from "../components/BuyButton.astro"
 ---
 
-<section class="pt-24 pb-24 px-2 md:px-24">
+<section class="pt-12 px-2 md:pt-24 md:pb-24 lg:px-24">
   <div
-    class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+    class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:py-16 sm:grid-cols-12"
   >
-    <div class="mr-auto place-self-center lg:col-span-7">
+    <div class="order-0 sm:mr-auto place-self-start sm:place-self-center sm:col-span-7">
       <span class="flex text-white items-start gap-x-4">
         <AmazonLogo />
         <span class="rounded bg-yellow-500 text-black text-xs py-0.5 px-1">El n.º 1 más vendido</span>
@@ -19,7 +19,7 @@ import BuyButton from "../components/BuyButton.astro"
         El mejor libro para Aprender Git y GitHub
       </h1>
       <p
-        class="max-w-2xl mb-6 font-light text-white/90 lg:mb-8 md:text-lg lg:text-xl"
+        class="max-w-2xl mb-6 font-light text-white/90 lg:mb-8 md:text-lg lg:text-xl text-pretty"
       >
         Hoy en día es imposible imaginar el desarrollo de software sin Git.
         Este libro te enseñará desde lo más básico hasta estrategias
@@ -30,18 +30,21 @@ import BuyButton from "../components/BuyButton.astro"
       >
         Más de 300 páginas de contenido, con ejemplos e ilustraciones.
       </p>
-      <footer class="flex flex-col md:flex-row gap-4 mt-4">
+      <footer class="flex flex-col xl:flex-row gap-4 mt-4">
         <a
           href="https://leanpub.com/aprendiendo-git"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex gap-2 items-center bg-blue-500 active:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg border-2 border-blue-500 transition duration-200 ease-in-out hover:scale-105"
+          class="text-center inline-flex gap-2 items-center bg-blue-500 active:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg border-2 border-blue-500 transition duration-200 ease-in-out hover:scale-105 justify-center"
         >
           Comprar versión digital (eBook)
         </a>
         <BuyButton server:defer />
     </footer>
     </div>
-    <Book />
+
+    <section class="order-1 scale-50 md:scale-75 lg:scale-90 lg:mt-0 sm:col-span-5 sm:flex justify-center items-center">
+      <Book />
+    </section>
   </div>
 </section>

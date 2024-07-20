@@ -8,7 +8,7 @@ import Testimonial from "../components/Testimonial.astro";
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Reseñas del libro</h2>
           <p class="mb-8 font-light text-gray-500 lg:mb-16 dark:text-gray-400 sm:text-xl">Esto es lo que dicen los lectores del libro de Aprendiendo Git y GitHub</p>
       </div> 
-      <div class="grid gap-8 lg:grid-cols-3">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div class="space-y-6">
             <Testimonial
               title=" Excelente libro para aprender todas las bases de Git y GitHub"
@@ -55,7 +55,7 @@ import Testimonial from "../components/Testimonial.astro";
           avatarImage="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/f2ee89f7-015c-4da8-8da6-4c24eb6813f2._CR63,0,373,373_SX48_.jpg"
         />
           </div>
-          <div class="space-y-6">
+          <div class="block md:hidden lg:block space-y-6">
             <Testimonial
             title="Buena introducción a Git"
             quote="El libro cubre desde el concepto del control de versiones y la instalación de un cliente Git hasta estrategias para gestionar los repositorios y trucos. Explica las diferencias entre distintos conceptos como rebase y merge. Sin lugar a dudas, una manera amena, sencilla y progresiva de controlar esta herramienta."
