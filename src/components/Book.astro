@@ -1,10 +1,10 @@
+---
+import LibroModel from "./libro/LibroModel";
+---
+
 <div class="book-container">
   <div class="book">
-    <img
-      alt="Portada del libro Aprendiendo Git"
-      src="/cover.webp"
-      decoding="async"
-    />
+    <LibroModel client:load />  
   </div>
 </div>
 
@@ -13,89 +13,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 600px;
+    perspective: 800px;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
   }
 
-@keyframes initAnimation {
-  0% {
-    transform: rotateY(0deg);
+  .book {
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    position: relative;
   }
-  100% {
-    transform: rotateY(-20deg);
+
+  @keyframes initAnimation {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-20deg);
+    }
   }
-}
 
-.book {
-  width: 300px;
-  height: 450px;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: rotateY(-20deg);
-  transition: 1s ease;
-  animation: 1s ease 0s 1 initAnimation;
-}
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .book {
+      width: 90vw;
+    }
+  }
 
-.book-container:hover .book, 
-.book-container:focus .book {
-  transform: rotateY(0deg);
-}
-
-.book > :first-child {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: red;
-  width: 300px;
-  height: 450px;
-  transform: translateZ(15px);
-  background-color: #ffffff;
-  border-radius: 0 2px 2px 0;
-}
-
-.book::before {
-  position: absolute;
-  content: ' ';
-  background-color: blue;
-  left: 0;
-  top: 1px;
-  width: 28px;
-  height: 448px;
-  transform: translateX(284px) rotateY(90deg);
-  background: linear-gradient(90deg, 
-    #fff 0%,
-    #f9f9f9 5%,
-    #fff 10%,
-    #f9f9f9 15%,
-    #fff 20%,
-    #f9f9f9 25%,
-    #fff 30%,
-    #f9f9f9 35%,
-    #fff 40%,
-    #f9f9f9 45%,
-    #fff 50%,
-    #f9f9f9 55%,
-    #fff 60%,
-    #f9f9f9 65%,
-    #fff 70%,
-    #f9f9f9 75%,
-    #fff 80%,
-    #f9f9f9 85%,
-    #fff 90%,
-    #f9f9f9 95%,
-    #fff 100%
-    );
-}
-
-.book::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: ' ';
-  width: 300px;
-  height: 450px;
-  transform: translateZ(-15px);
-  background-color: #ffffff;
-  border-radius: 0 2px 2px 0;
-  box-shadow: -10px 0 50px 10px rgba(0, 0, 0, .3);
-}
+  @media (max-width: 480px) {
+    .book {
+      width: 100vw;
+    }
+  }
 </style>
